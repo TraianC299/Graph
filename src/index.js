@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GraphProvider } from './contexts/GraphContext.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <GraphProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </GraphProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -40,7 +40,7 @@ export default WeightInputComponent
 
 
 const WeightInput = ({i, j}) => {
-    const {data, setData} = useGraph()
+    const { setData} = useGraph()
     const [value, setValue] = useState()
 
   
@@ -62,6 +62,11 @@ const WeightInput = ({i, j}) => {
 
     return(
         <input 
+        style={{
+            maxWidth:"50px",
+            height:"100%",
+            width:"100%",
+        }}
         type="number"  
         value={value}
         onChange={(e)=>changeValue(parseInt(e.target.value))}

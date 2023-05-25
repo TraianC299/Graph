@@ -4,20 +4,12 @@ import useDidMountEffect from "./useDidMountEffect"
 
 
 
-class Graph{
-    constructor(nodes, srcNode, edges) {
-        this.nodes = nodes;
-        this.srcNode = srcNode;
-        this.edges = edges
-        this.nrDeVarfuri = nodes.length
-      }
 
-    }
 const useBF = () => {
     const {data, setData} = useGraph()
     
 
-
+console.log(data)
     const calculateDistances = () => {
         let distances = {}
         for(let i=0; i<data.nrDeVarfuri; i++){
@@ -29,6 +21,7 @@ const useBF = () => {
             edges.forEach(edge=>{
                 if(distances[edge.from] + edge.value < distances[edge.to]){
                     distances[edge.to] = parseInt(distances[edge.from]) + parseInt(edge.value)
+                    console.log(`(${edge.from} ${edge.to}) |  ${distances[edge.to]} | ${distances[edge.from]} + ${edge.value}`)
                 }
             });
         }

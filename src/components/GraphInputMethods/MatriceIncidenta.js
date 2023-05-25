@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useGraph } from '../../contexts/GraphContext.context'
 import { Button, Table } from '../../styles/global'
-import useDidMountEffect from '../../hooks/useDidMountEffect'
 import { RED } from '../../data/constants'
 import OptionSelector from '../input/OptionSelector'
-import useMatriceaDeIncidenta from '../../hooks/useMatriceaDeIncidenta'
+import useMatriceaDeIncidenta from '../../hooks/useMatriceaDeIncidenta.ts'
 
 
 

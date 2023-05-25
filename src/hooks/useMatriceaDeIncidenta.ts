@@ -1,11 +1,11 @@
 import { useGraph } from "../contexts/GraphContext.context"
 
 
-const convertToMatriceDeIncidenta = (listaAdiacenta, nrDeVarfuri) => {
+const convertToMatriceDeIncidenta = (listaAdiacenta: { [x: string]: any[] }, nrDeVarfuri: Number) => {
 
     const legaturi = []
     Object.keys(listaAdiacenta).forEach((i)=>{
-        listaAdiacenta[i].forEach((j)=>{
+        listaAdiacenta[i].forEach((j: any)=>{
             legaturi.push([Number(i),Number(j)])
         })
     })
@@ -27,7 +27,7 @@ const convertToMatriceDeIncidenta = (listaAdiacenta, nrDeVarfuri) => {
     }
 
 
-const convertFromMatriceDeIncidenta = (matriceaDeIncidenta) => {
+const convertFromMatriceDeIncidenta = (matriceaDeIncidenta: number | 0[]) => {
     const newListaAdiacenta = {}
     //construim lista de adiacenta
     Object.keys(matriceaDeIncidenta).forEach((legatura)=>{
@@ -46,8 +46,8 @@ const useMatriceaDeIncidenta = () => {
     const {data, setData} = useGraph()
  
     return {  matriceaIncideanta:convertToMatriceDeIncidenta(data.listaAdiacenta, data.nrDeVarfuri), 
-        setMatriceaIncidenta: (newMatriceaIncidenta)=>{
-            setData(prev=>({...prev, listaAdiacenta:convertFromMatriceDeIncidenta(newMatriceaIncidenta)}))
+        setMatriceaIncidenta: (newMatriceaIncidenta: number | 0[])=>{
+            setData((prev: any)=>({...prev, listaAdiacenta:convertFromMatriceDeIncidenta(newMatriceaIncidenta)}))
         }
         
     }

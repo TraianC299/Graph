@@ -25,7 +25,6 @@ export const useGraph=()=>{
         
 
 
-        console.log(data)
         
         
     useDidMountEffect(()=>{
